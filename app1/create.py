@@ -162,6 +162,20 @@ tiefling = Races(
     racial_trait_2 = "Hellish Resistance",
     racial_trait_3 = "Infernal Legacy"
 )
+
+"""
+Add a test created model
+"""
+example = CreatedModels(
+    class_id = 1,
+    races_id = 1,
+    strength = 1,
+    constitution = 1,
+    dexterity = 1,
+    intelligence = 1,
+    wisdom = 1,
+    charisma = 1
+)
 """
 End table population, now adding to database
 """
@@ -186,6 +200,7 @@ db.session.add(halfling)
 db.session.add(halforc)
 db.session.add(human)
 db.session.add(tiefling)
-db.session.commit()
 
-# Surely there's a better way to do this?
+db.session.add(example)
+
+db.session.commit()

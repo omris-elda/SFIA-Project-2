@@ -1,15 +1,6 @@
-from app import db, app
-from app.models import Classes, Races, CreatedModels
-from app.classes import PlayerCharacter
-
-newchar = PlayerCharacter()
-print(newchar.viewstrength())
-newchar.addstrength(5)
-print(newchar.viewstrength())
-
-classdata = Classes.query.all()
-print(classdata)
+from app import app
+from flask import Flask
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, host="0.0.0.0", port=5000)

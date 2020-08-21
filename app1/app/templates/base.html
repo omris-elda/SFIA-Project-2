@@ -9,7 +9,8 @@
     <body>
         <div>Project 2: 
 
-            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('generate') }}">Generate New Entry</a>
+            <a href = "{{ url_for('viewall') }}">View All Entries</a>
             
         </div>
         <hr>
@@ -22,6 +23,8 @@
         </ul>
         {% endif %}
         {% endwith %}
-        {% block content %}{% endblock %}
+        {% block content %}
+        
+        {% endblock %}
     </body>
 </html>
