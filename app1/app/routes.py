@@ -74,16 +74,12 @@ def generate():
 		db.session.commit()
 		flash("New model added!")
 		return redirect(url_for("viewall"))
-	else:
-		return "Something went wrong."
 
 @app.route("/view/all")
 def viewall():
 	model = CreatedModels.query.all()
 	if model is not None:
 		return render_template("view/viewall.html", title = "View All", model = model)
-	else:
-		return "There are no pre-made models yet, why don't you click on 'generate' and make your own?"
 
 @app.route("/view/<model_id>")
 def viewspecific(model_id):
