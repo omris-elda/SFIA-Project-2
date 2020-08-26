@@ -31,7 +31,7 @@ services:
     ports:
     - target: 5003
       published: 5003
-      protocol: tcp  
+      protocol: tcp
 # building and modifying the nginx service
   nginx:
     container_name: nginx

@@ -5,6 +5,7 @@ from app.models import Classes, Races, CreatedModels
 from app.classes import PlayerCharacter
 import json
 
+
 @app.route("/")
 @app.route("/generate")
 def generate():
