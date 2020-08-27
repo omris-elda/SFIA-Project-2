@@ -6,6 +6,7 @@ pipeline {
                 sh "pwd"
                 sh "whoami"
                 sh "ls"
+                sh "ansible -v"
                 sh "ansible-playbook -i inventory.cfg playbook.yaml"
                 // build the containers here with docker-compose build perhaps?
                 // then send them off to the registry (dockerhub)
