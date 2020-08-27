@@ -1,20 +1,20 @@
 #! /bin/bash
 pwd
 ls
-pip3 install -r requirements
+pip3 install -r requirements.txt
 
 cd app1
-pytest --cov app --cov-report term-missing
+python3 -m pytest --cov app --cov-report term-missing
 cd ..
 
 cd app2
-pytest --cov app --cov-report term-missing
+python3 -m pytest --cov app --cov-report term-missing
 cd ..
 
 cd app3
-pytest --cov app --cov-report term-missing
+python3 -m pytest --cov app --cov-report term-missing
 cd ..
 
 cd app4
-pytest --cov app --cov-report term-missing
+python3 -m pytest --cov app --cov-report term-missing
 cd ..
