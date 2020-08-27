@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                sh "./scripts/build.sh"
+                sh "pwd"
+                // sh "./scripts/build.sh"
                 // build the containers here with docker-compose build perhaps?
                 // then send them off to the registry (dockerhub)
             }
