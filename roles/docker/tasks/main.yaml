@@ -70,9 +70,3 @@
     name: docker
     state: latest
 # Installs the Docker SDK
-
-- name: Install Pytest
-  pip:
-    name: pytest
-    state: latest
-    executable: pip3
