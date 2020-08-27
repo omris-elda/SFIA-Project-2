@@ -1,7 +1,7 @@
-# - name: Leave Swarm
-#   docker_swarm:
-#     state: absent
-#     force: true
+- name: Leave Swarm
+  docker_swarm:
+    state: absent
+    force: true
 # Leaves the swarm if it's already part of one
 
 - name: Initialise Docker Swarm
