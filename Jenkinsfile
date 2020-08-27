@@ -3,11 +3,7 @@ pipeline {
     stages {
         stage("Build") {
             steps {
-                sh "pwd"
-                sh "whoami"
-                sh "ls"
-                sh "ansible --version"
-                sh "ansible-playbook -i inventory.cfg playbook.yaml"
+                sh "./scripts/build.sh"
                 // build the containers here with docker-compose build perhaps?
                 // then send them off to the registry (dockerhub)
             }
@@ -38,6 +34,7 @@ pipeline {
             steps {
                 sh "pwd"
                 sh "ls"
+                sh "docker-compose build -d"
                 // deploy to Docker Swarm using the build that was pushed to dockerhub most recently
                 // hopefully using docker stack? We'll see.
             }
