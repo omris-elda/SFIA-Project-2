@@ -12,7 +12,7 @@ pipeline {
         
         stage("Test") {
             steps {
-                sh "./scripts/test.sh"
+                sh "bash ./scripts/test.sh"
                 // test all of the services with
                 // pytest --cov application --cov-report term-missing
             }

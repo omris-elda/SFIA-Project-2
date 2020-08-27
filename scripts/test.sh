@@ -1,6 +1,8 @@
 #! /bin/bash
 pwd
 ls
+pip3 install -r requirements
+
 cd app1
 pytest --cov app --cov-report term-missing
 cd ..
