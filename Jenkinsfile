@@ -11,20 +11,7 @@ pipeline {
         
         stage("Test") {
             steps {
-                sh "pwd"
-                sh "ls"
-                sh "cd app1"
-                sh "pytest --cov application --cov-report term-missing"
-                sh "cd .."
-                sh "cd app2"
-                sh "pytest --cov application --cov-report term-missing"
-                sh "cd .."
-                sh "cd app3"
-                sh "pytest --cov application --cov-report term-missing"
-                sh "cd .."
-                sh "cd app4"
-                sh "pytest --cov application --cov-report term-missing"
-                sh "cd .."
+                sh "./scripts/test.sh"
                 // test all of the services with
                 // pytest --cov application --cov-report term-missing
             }
