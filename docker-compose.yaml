@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.8"
 # building the first image and container
 services:
   service1:
