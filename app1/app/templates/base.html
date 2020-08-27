@@ -1,0 +1,30 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - Project 2</title>
+      {% else %}
+      <title>Welcome to Project 2</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>Project 2: 
+
+            <a href="{{ url_for('generate') }}">Generate New Entry</a>
+            <a href = "{{ url_for('viewall') }}">View All Entries</a>
+            
+        </div>
+        <hr>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message}}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+        {% block content %}
+        
+        {% endblock %}
+    </body>
+</html>

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>View Individual Content</h1>
+<hr>
+{% for model in model %}
+<div>
+    <p>
+        Class: {{ model.class.class_name }}<br>
+        {{ model.class.class_description }}<br>
+        Race: {{ model.races.race_name }}<br>
+        {{ model.races.race_description }}<br>
+        Strength: {{ model.strength }}<br>
+        Constituion: {{ model.constitution }}<br>
+        Dexterity: {{ model.dexterity }}<br>
+        Intelligence: {{ model.intelligence }}<br>
+        Wisdom: {{ model.wisdom }}<br>
+        Charisma: {{ model.charisma }}<br>
+        Hit Die: {{ model.class.hit_die }}<br>
+        Primary Ability: {{ model.class.primary_ability }}<br>
+        Saves: {{ model.class.saves }}<br>
+        Racial Traits: {{ model.races.racial_trait_1 }}, {{ model.races.racial_trait_2 }},
+        {{ model.races.racial_trait_3 }}, {{ model.races.racial_trait_4 }}<br>
+    </p>
+</div>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,50 @@
+version: "3.8"
+# building the first image and container
+services:
+  service1:
+    container_name: service1
+    image: app1
+    build: ./app1
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+# building the second image and container
+  service2:
+    container_name: service2
+    image: app2
+    build: ./app2
+    ports:
+    - target: 5001
+      published: 5001
+      protocol: tcp
+# building the third image and container
+  service3:
+    container_name: service3
+    image: app3
+    build: ./app3
+    ports:
+    - target: 5002
+      published: 5002
+      protocol: tcp
+# building the fourth image and container
+  service4:
+    container_name: service4
+    image: app4
+    build: ./app4
+    ports:
+    - target: 5003
+      published: 5003
+      protocol: tcp
+# building and modifying the nginx service
+  nginx:
+    container_name: nginx
+    image: nginx
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
