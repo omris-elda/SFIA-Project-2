@@ -8,7 +8,7 @@ pipeline {
                 // then send them off to the registry (dockerhub)
             }
         }
-        
+
         stage("Test") {
             steps {
                 sh "bash ./scripts/test.sh"
@@ -21,7 +21,6 @@ pipeline {
             steps {
                 sh "pwd"
                 sh "ls"
-                sh "docker-compose build -d"
                 // deploy to Docker Swarm using the build that was pushed to dockerhub most recently
                 // hopefully using docker stack? We'll see.
             }
