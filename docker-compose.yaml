@@ -3,7 +3,7 @@ version: "3.8"
 services:
   service1:
     container_name: service1
-    image: omriselda/app1:latest top
+    image: omriselda/app1:latest -f /dev/null
     build: ./app1
     ports:
     - target: 5000
@@ -14,7 +14,7 @@ services:
 # building the second image and container
   service2:
     container_name: service2
-    image: omriselda/app2:latest top
+    image: omriselda/app2:latest tail -f /dev/null
     build: ./app2
     ports:
     - target: 5001
@@ -25,7 +25,7 @@ services:
 # building the third image and container
   service3:
     container_name: service3
-    image: omriselda/app3:latest top
+    image: omriselda/app3:latest -f /dev/null
     build: ./app3
     ports:
     - target: 5002
@@ -36,7 +36,7 @@ services:
 # building the fourth image and container
   service4:
     container_name: service4
-    image: omriselda/app4:latest top
+    image: omriselda/app4:latest -f /dev/null
     build: ./app4
     ports:
     - target: 5003
