@@ -48,11 +48,11 @@ sudo docker container ls -a
 sudo docker stack services project2
 cd ..
 rm -r SFIA-Project-2
-sudo docker service scale project2_service1=10
-sudo docker service scale project2_service2=10
-sudo docker service scale project2_service3=10
-sudo docker service scale project2_service4=10
-sudo docker service scale project2_nginx=10
+sudo docker service scale project2_service1=3
+sudo docker service scale project2_service2=3
+sudo docker service scale project2_service3=3
+sudo docker service scale project2_service4=3
+sudo docker service scale project2_nginx=3
 sudo docker stack services project2
 ls
 

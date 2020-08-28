@@ -11,7 +11,7 @@ services:
       protocol: tcp
     deploy:
       mode: replicated
-      replicas: 10
+      replicas: 3
 # building the second image and container
   service2:
     container_name: service2
@@ -23,7 +23,7 @@ services:
       protocol: tcp
     deploy:
       mode: replicated
-      replicas: 10
+      replicas: 3
 # building the third image and container
   service3:
     container_name: service3
@@ -35,7 +35,7 @@ services:
       protocol: tcp
     deploy:
       mode: replicated
-      replicas: 10
+      replicas: 3
 # building the fourth image and container
   service4:
     container_name: service4
@@ -47,7 +47,7 @@ services:
       protocol: tcp
     deploy:
       mode: replicated
-      replicas: 10
+      replicas: 3
 # building and modifying the nginx service
   nginx:
     container_name: nginx
@@ -62,4 +62,4 @@ services:
       target: /etc/nginx/nginx.conf
     deploy:
       mode: replicated
-      replicas: 10
+      replicas: 3
