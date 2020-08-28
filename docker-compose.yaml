@@ -10,6 +10,7 @@ services:
       published: 5000
       protocol: tcp
     deploy:
+      mode: replicated
       replicas: 10
 # building the second image and container
   service2:
@@ -21,6 +22,7 @@ services:
       published: 5001
       protocol: tcp
     deploy:
+      mode: replicated
       replicas: 10
 # building the third image and container
   service3:
@@ -32,6 +34,7 @@ services:
       published: 5002
       protocol: tcp
     deploy:
+      mode: replicated
       replicas: 10
 # building the fourth image and container
   service4:
@@ -43,11 +46,12 @@ services:
       published: 5003
       protocol: tcp
     deploy:
+      mode: replicated
       replicas: 10
 # building and modifying the nginx service
   nginx:
     container_name: nginx
-    image: nginx
+    image: omriselda/nginx
     ports:
     - target: 80
       published: 80
@@ -57,4 +61,5 @@ services:
       source: ./nginx/nginx.conf
       target: /etc/nginx/nginx.conf
     deploy:
+      mode: replicated
       replicas: 10
