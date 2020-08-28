@@ -6,6 +6,18 @@ ssh swarm-manager
 ls
 pwd
 whoami
+# make sure there's no residual images
+sudo docker images
+sudo docker rmi ormiselda/app1:latest
+sudo docker rmi ormiselda/app2:latest
+sudo docker rmi ormiselda/app3:latest
+sudo docker rmi ormiselda/app4:latest
+sudo docker rmi ormiselda/app1
+sudo docker rmi ormiselda/app2
+sudo docker rmi ormiselda/app3
+sudo docker rmi ormiselda/app4
+sudo docker images
+
 git clone https://github.com/omris-elda/SFIA-Project-2.git
 ls
 cd SFIA-Project-2

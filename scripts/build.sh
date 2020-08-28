@@ -17,6 +17,10 @@ sudo docker rmi ormiselda/app1:latest
 sudo docker rmi ormiselda/app2:latest
 sudo docker rmi ormiselda/app3:latest
 sudo docker rmi ormiselda/app4:latest
+sudo docker rmi ormiselda/app1
+sudo docker rmi ormiselda/app2
+sudo docker rmi ormiselda/app3
+sudo docker rmi ormiselda/app4
 sudo docker-compose build
 sudo docker images
 # First we have to tag the images with the username of the registry we want to push them to
