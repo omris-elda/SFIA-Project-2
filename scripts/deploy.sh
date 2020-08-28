@@ -21,6 +21,11 @@ sudo docker images
 git clone https://github.com/omris-elda/SFIA-Project-2.git
 ls
 cd SFIA-Project-2
+sudo docker pull omriselda/app1:latest
+sudo docker pull omriselda/app2:latest
+sudo docker pull omriselda/app3:latest
+sudo docker pull omriselda/app4:latest
+
 sudo docker stack deploy --compose-file docker-compose.yaml project2
 sudo docker images
 sudo docker container ls -a
