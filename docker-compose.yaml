@@ -51,7 +51,7 @@ services:
 # building and modifying the nginx service
   nginx:
     container_name: nginx
-    image: omriselda/nginx
+    image: nginx
     ports:
     - target: 80
       published: 80

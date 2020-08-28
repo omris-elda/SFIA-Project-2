@@ -2,6 +2,14 @@
 
 pwd
 ls
+
+ssh swarm-worker-1 << EOF
+git clone https://github.com/omris-elda/SFIA-Project-2.git
+EOF
+ssh swarm-worker-2 << EOF
+git clone https://github.com/omris-elda/SFIA-Project-2.git
+EOF
+
 ssh swarm-manager << EOF
 ls
 pwd
@@ -25,14 +33,12 @@ sudo docker pull omriselda/app1:latest
 sudo docker pull omriselda/app2:latest
 sudo docker pull omriselda/app3:latest
 sudo docker pull omriselda/app4:latest
-sudo docker pull omriselda/nginx:latest
 
 sudo docker images
 sudo docker tag omriselda/app1 app1
 sudo docker tag omriselda/app2 app2
 sudo docker tag omriselda/app3 app3
 sudo docker tag omriselda/app4 app4
-sudo docker tag omriselda/nginx nginx
 
 sudo docker images
 sudo docker stack deploy --compose-file docker-compose.yaml project2
