@@ -24,6 +24,7 @@ sudo docker rmi ormiselda/app1
 sudo docker rmi ormiselda/app2
 sudo docker rmi ormiselda/app3
 sudo docker rmi ormiselda/app4
+
 sudo docker images
 # Clone the repo down so that I can use the docker-compose.yaml
 git clone https://github.com/omris-elda/SFIA-Project-2.git
@@ -47,11 +48,11 @@ sudo docker container ls -a
 sudo docker stack services project2
 cd ..
 rm -r SFIA-Project-2
-sudo docker service scale project2_service1=10
-sudo docker service scale project2_service2=10
-sudo docker service scale project2_service3=10
-sudo docker service scale project2_service4=10
-sudo docker service scale project2_nginx=10
+sudo docker service scale project2_service1=3
+sudo docker service scale project2_service2=3
+sudo docker service scale project2_service3=3
+sudo docker service scale project2_service4=3
+sudo docker service scale project2_nginx=3
 sudo docker stack services project2
 ls
 
