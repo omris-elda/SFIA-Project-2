@@ -17,6 +17,11 @@ sudo docker rmi ormiselda/app2
 sudo docker rmi ormiselda/app3
 sudo docker rmi ormiselda/app4
 sudo docker images
+sudo docker tag omriselda/app1 app1
+sudo docker tag omriselda/app2 app2
+sudo docker tag omriselda/app3 app3
+sudo docker tag omriselda/app4 app4
+
 # Clone the repo down so that I can use the docker-compose.yaml
 git clone https://github.com/omris-elda/SFIA-Project-2.git
 ls
