@@ -24,6 +24,8 @@ cd SFIA-Project-2
 sudo docker stack deploy --compose-file docker-compose.yaml project2
 sudo docker images
 sudo docker container ls
+cd ..
 rm -r SFIA-Project-2
 ls
+
 EOF
