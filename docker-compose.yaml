@@ -3,39 +3,51 @@ version: "3.8"
 services:
   service1:
     container_name: service1
-    image: app1
+    image: omriselda/app1
     build: ./app1
     ports:
     - target: 5000
       published: 5000
       protocol: tcp
+    deploy:
+      mode: replicated
+      replicas: 10
 # building the second image and container
   service2:
     container_name: service2
-    image: app2
+    image: omriselda/app2
     build: ./app2
     ports:
     - target: 5001
       published: 5001
       protocol: tcp
+    deploy:
+      mode: replicated
+      replicas: 10
 # building the third image and container
   service3:
     container_name: service3
-    image: app3
+    image: omriselda/app3
     build: ./app3
     ports:
     - target: 5002
       published: 5002
       protocol: tcp
+    deploy:
+      mode: replicated
+      replicas: 10
 # building the fourth image and container
   service4:
     container_name: service4
-    image: app4
+    image: omriselda/app4
     build: ./app4
     ports:
     - target: 5003
       published: 5003
       protocol: tcp
+    deploy:
+      mode: replicated
+      replicas: 10
 # building and modifying the nginx service
   nginx:
     container_name: nginx
@@ -48,3 +60,6 @@ services:
     - type: bind
       source: ./nginx/nginx.conf
       target: /etc/nginx/nginx.conf
+    deploy:
+      mode: replicated
+      replicas: 10
