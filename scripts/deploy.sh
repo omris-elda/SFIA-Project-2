@@ -2,7 +2,7 @@
 
 pwd
 ls
-ssh swarm-manager
+ssh swarm-manager << EOF
 ls
 pwd
 whoami
@@ -26,3 +26,4 @@ sudo docker images
 sudo docker container ls
 rm -r SFIA-Project-2
 ls
+EOF
