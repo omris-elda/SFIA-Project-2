@@ -5,3 +5,4 @@ settings.json
 *.venv/
 *__pycache__/
 *migrations/
+*.coverage

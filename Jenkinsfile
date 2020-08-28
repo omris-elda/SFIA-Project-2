@@ -19,8 +19,7 @@ pipeline {
 
         stage("Deploy") {
             steps {
-                sh "pwd"
-                sh "ls"
+                sh "bash ./scripts/deploy.sh"
                 // deploy to Docker Swarm using the build that was pushed to dockerhub most recently
                 // hopefully using docker stack? We'll see.
             }

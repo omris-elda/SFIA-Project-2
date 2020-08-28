@@ -7,4 +7,4 @@ ls
 /home/jenkins/.local/bin/ansible-playbook -i inventory.cfg playbook.yaml
 docker --version
 docker-compose --version
-# docker-compose build -d
+docker-compose build
