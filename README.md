@@ -15,21 +15,22 @@ Docker Stack\
 Flask\
 Git / Github\
 Jenkins\
+Jira\
 Pytest\
 Python\
 ## Architecture
 ---
 The database that I used in this program was quite simple, with just three tables, and I created a fairly simple ERD to display the values that would be entered into each table and how they are going to be linked.\
-<-- insert erd here --->
+![ERD](./Documentation/ERD.png)
 Initially I did not have the created models table, which meant that my tables were even simpler, with no relationships at all!\
-<-- insert simple erd here -->
+![ERD](./Documentation/SimpleERD.png)
 ## Deployment
 ---
 The deployment of my program was mostly done using a Jenkins pipeline. This pipeline has three main steps; build, test, and deploy.\
 The build section of the pipeline ensures that the swarm VMs have the appropriate software installed, and that they're correctly connected to the swarm. It also builds the dDcker images from the Dockerfiles in the app folder, using Docker compose to streamline the process. These builds are then pushed to Docker Hub so that I can retrieve them at my convenience later.\
 The testing section does exactly what you'd expect it to, it goes through all of the individual services and runs tests on them to ensure that they work as they should. Using Pytest I was able to get a minimum of 90% coverage with my testing, and much of the code that was missed was only missed because it wasn't actually used in the program, and was only there in case the client wished to expand upon the functionality of the application. These include (but are not limited to) the functions to lower attribute points, and the functions to view the attribute points.\
 The deploy section is also fairly self-explanitory. It deploys the application using Docker stack, which will allow the application to be deployed over serveral different VMs, using the images that we pushed to Docker Hub earlier, so long as they are all connected to the same Docker swarm. This means that there is less chance of the whole program crashing, as if one node goes down Docker will automatically re-deploy the containers to other VMs.\
-<-- CI pipeline goes here -->
+![CI Pipeline](./Documentation/CIPipeline.png)
 ## Steps to run the program
 ---
 On VM 1, you must install a few things to ensure that Jenkins will run everything properly.
@@ -40,7 +41,8 @@ It's also important to install Pytest on VM 1. Since this is the only machine th
 The Jenkins script will then run through the process of building, testing, and deploying the program, as explained above.\
 ## Testing
 ---
-
+With my testing I was able to reach a minimum of 90% coverage, with the only bits of code not being tested being the lines that aren't actually used, and are only coded so that should I want to expand the functionality of the program it wouldn't be too hard. These lines of code are essentially just to edit the attributes of my PlayerCharacter model. While I use the functions that add value to the attributes, I do not currently have any need to remove value from, or examine the value of the classes attributes, and so while those lines are coded in, they are superfluous at the moment.\
+Having said that, the vast majority of the program has been tested, from ensuring that all the pages succesfully load, to making sure that the main view all page loads after the generate page has done its job. This means that no matter the outcome of the generate page, we've ensured that the view all page will still load properly, and that the various APIs return valid results.
 ## Current Bugs
 ---
 Currently the Nginx container doesn't always deploy to every single Swarm node, meaning that if I try to connect to the website through some of the nodes it won't always work. A way to fix this would be to have Nginx running as a separate service on a dedicated VM, so that that was always the entry point for the application. This is something that can be implemented in a later build.\
