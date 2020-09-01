@@ -54,9 +54,9 @@ In the future it'd be nice to add a function that allows you to build a full cha
 Another feature that would be a good addition is that with some classes/races, you get a +1 or +2 to some attributes, which are currently hard coded to be added to specific attributes, instead of randomly assigning them as it should be. This shouldn't be too difficult to solve, a simple rng would be able to fix this. I'd also like to assign attributes the correct way, which is to roll 4 d6 and ignore the lowest one, whereas at the moment I'm just rolling 3 and getting to total from there.
 ## Acknowledgements
 ---
-CA for teaching me the skills required to create this project.
+CA for teaching me the skills required to create this project.\
 My cohort and instructors for their continued support.
 ## Author(s)
 ---
-Ed Pricket (Coding, Design, Implementation)
+Ed Pricket (Coding, Design, Implementation)\
 DnD Beyond (Class and Race information)
