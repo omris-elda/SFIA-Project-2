@@ -4,7 +4,7 @@ pwd
 whoami
 ls
 /home/jenkins/.local/bin/ansible --version
-/home/jenkins/.local/bin/ansible-playbook -i inventory.cfg playbook.yaml
+#/home/jenkins/.local/bin/ansible-playbook -i inventory.cfg playbook.yaml
 docker --version
 docker-compose --version
 # Delete any previous images
